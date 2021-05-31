@@ -414,10 +414,11 @@ ul {
     }
 
     &__mega {
+      height: 23rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 20% 80%;
-      gap: 2em 0em;
+      grid-template-rows: 10% 90%;
+      gap: 1em 0em;
       padding: 2em;
     }
 
