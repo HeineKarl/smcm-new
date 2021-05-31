@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&family=Source+Serif+Pro&display=swap");
+
+// Variables Fonts
+$RobotoSlab: "Roboto Slab";
+$SourceSerifPro: "Source Serif Pro";
+$Poppins: "Poppins";
+$fontLink: "Poppins", "Roboto Slab", "Source Serif Pro";
+
+// Variables Colors
+$primaryColor100: #ffffff;
+$primaryColor200: #f5f5f5;
+$primaryColor300: #b6b6b6;
+$darkColor900: #000000;
+$secondaryColor: #131966;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // height: 100vh;
+  overflow: hidden;
+  font-family: "Source Serif Pro";
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+button,
+a {
+  background: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.hero {
+  background-color: $primaryColor200;
+  height: 91.5px;
+  min-height: 91.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__signature {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $secondaryColor;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+  }
+  &__hamburger {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    div {
+      background-color: $secondaryColor;
+      width: 21px;
+      height: 3px;
+      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &::before,
+      &::after {
+        content: "";
+        background-color: $secondaryColor;
+        width: 21px;
+        height: 3px;
+        border-radius: 8px;
+        position: absolute;
+      }
+
+      &::before {
+        top: 6px;
+      }
+
+      &::after {
+        bottom: 6px;
+      }
+    }
+  }
+}
+
+.navigation {
+  background-color: $primaryColor200;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  width: 270px;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  transform: translateX(270px);
+  transition: all 500ms ease-in-out;
+
+  &__inner {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  }
+
+  &__header {
+    background-color: $primaryColor200;
+    height: 180px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em 0em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9;
+
+    .close-btn {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      cursor: pointer;
+
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+
+  &__logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  &__name {
+    color: $secondaryColor;
+    border-bottom: 1px solid black;
+    padding: 0em 1.5em 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+  }
+  &__body {
+    flex-grow: 10;
+    height: auto;
+  }
+
+  &__footer {
+    min-height: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h6 {
+      font-size: 10px;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+}
+
+.menu {
+  // For about, school management and service
+  transition: all 500ms ease-in-out;
+
+  &__btn {
+    // background-color: ;
+    border-radius: 3px;
+    width: 100%;
+    padding: 1.5em 2em 1.5em 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+      transition: all 300ms ease-in-out;
+    }
+    &:hover {
+      background: #d3d2d2;
+    }
+  }
+
+  &__container {
+    background-color: #e6e6e6;
+    overflow: hidden;
+    width: 100%;
+
+    // Needed for the collapsing
+    padding: 0 0.25em;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    transition: all 400ms ease-in-out;
+  }
+  &__box {
+    a {
+      color: $darkColor900;
+      font-weight: 300;
+      font-size: 14px;
+      font-family: $Poppins;
+      border-radius: 3px;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        background: $primaryColor300;
+      }
+    }
+  }
+
+  &__header {
+    display: none;
+  }
+  &__section {
+    h3 {
+      margin: 3px 0;
+      padding: 0.25em 0 0.25em 0em;
+      text-align: center;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+// Classes for the JS Mobile View Port
+.collapse {
+  padding: 0.25em;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.btn-active {
+  background: #d3d2d2;
+}
+
+.open-nav {
+  transform: translateX(0);
+}
+
+.arrow-active {
+  transform: rotate(-180deg);
+}
+
+@media (min-width: 481px) and (max-width: 980px) {
+  .hero {
+    height: 98.5px;
+    min-height: 98.5px;
+    &__logo {
+      width: 75px;
+      height: 75px;
+    }
+
+    &__name {
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+@media (min-width: 981px) {
+  .hero {
+    // background-color: green;
+    height: 112px;
+    min-height: 112px;
+
+    &__signature {
+      width: 300px;
+      justify-content: space-evenly;
+    }
+
+    &__logo {
+      width: 90px;
+      height: 90px;
+    }
+
+    &__name {
+      h1 {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+    &__hamburger {
+      display: none;
+    }
+  }
+
+  .navigation {
+    // background-color: tomato;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: none;
+    transform: none;
+    position: static;
+
+    &__inner {
+      // background-color: rosybrown;
+      height: 90%;
+      width: 100%;
+      overflow-y: hidden;
+      scrollbar-width: none;
+    }
+
+    &__header {
+      display: none;
+    }
+
+    &__body {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-evenly;
+    }
+    &__footer {
+      display: none;
+    }
+  }
+
+  .menu {
+    // width: 100%;
+    // padding: 2em 0;
+    &__btn {
+      text-align: end;
+      padding: 1em 0.75em;
+      width: 120%;
+      justify-content: space-evenly;
+      // span {
+      //   width: 100%;
+      // }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &__container {
+      position: absolute;
+      width: 260px;
+      border-radius: 3px;
+    }
+
+    &__mega {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 20% 80%;
+      gap: 2em 0em;
+      padding: 2em;
+    }
+
+    &__header {
+      grid-column: 1 / 2;
+      display: block;
+    }
+    &__section {
+      grid-row: 2 / 3;
+      width: 95%;
+    }
+
+    &__section:nth-child(2) {
+      grid-column: 1 / 2;
+    }
+    &__section:nth-child(3) {
+      grid-column: 2 / 3;
+    }
+    &__section:nth-child(4) {
+      grid-column: 3 / 4;
+    }
+    &__section:nth-child(5) {
+      grid-column: 4 / 5;
+    }
+  }
+  .menu:nth-child(2) .menu__container {
+    left: 0;
+    width: 100%;
+  }
+}
