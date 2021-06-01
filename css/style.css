@@ -150,8 +150,8 @@ ul {
   position: absolute;
   top: 0;
   right: 0px;
-  -webkit-transform: translateX(270px);
-          transform: translateX(270px);
+  -webkit-transform: translateX(280px);
+          transform: translateX(280px);
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
@@ -361,6 +361,10 @@ ul {
           transform: rotate(-180deg);
 }
 
+.drop-active {
+  background-color: #eeeeee;
+}
+
 @media (min-width: 481px) and (max-width: 980px) {
   .hero {
     height: 98.5px;
@@ -455,7 +459,6 @@ ul {
     display: none;
   }
   .menu__btn {
-    text-align: end;
     padding: 1em 0.75em;
     width: 120%;
     -webkit-box-pack: space-evenly;
@@ -463,7 +466,7 @@ ul {
             justify-content: space-evenly;
   }
   .menu__btn:hover {
-    background-color: transparent;
+    background-color: #eeeeee;
   }
   .menu__container {
     position: absolute;

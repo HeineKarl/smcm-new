@@ -134,7 +134,7 @@ ul {
   position: absolute;
   top: 0;
   right: 0px;
-  transform: translateX(270px);
+  transform: translateX(280px);
   transition: all 500ms ease-in-out;
 
   &__inner {
@@ -299,6 +299,10 @@ ul {
   transform: rotate(-180deg);
 }
 
+.drop-active {
+  background-color: #eeeeee;
+}
+
 @media (min-width: 481px) and (max-width: 980px) {
   .hero {
     height: 98.5px;
@@ -392,18 +396,13 @@ ul {
   }
 
   .menu {
-    // width: 100%;
-    // padding: 2em 0;
     &__btn {
-      text-align: end;
       padding: 1em 0.75em;
       width: 120%;
       justify-content: space-evenly;
-      // span {
-      //   width: 100%;
-      // }
+
       &:hover {
-        background-color: transparent;
+        background-color: #eeeeee;
       }
     }
 
@@ -413,6 +412,7 @@ ul {
       border-radius: 3px;
     }
 
+    // School Management
     &__mega {
       height: 23rem;
       display: grid;
@@ -426,24 +426,35 @@ ul {
       grid-column: 1 / 2;
       display: block;
     }
+
+    // All Section
     &__section {
       grid-row: 2 / 3;
       width: 95%;
     }
 
+    // Acadamics Section
     &__section:nth-child(2) {
       grid-column: 1 / 2;
     }
+
+    // Admission Section
     &__section:nth-child(3) {
       grid-column: 2 / 3;
     }
+
+    // Faculties Section
     &__section:nth-child(4) {
       grid-column: 3 / 4;
     }
+
+    // Clubs and Organization
     &__section:nth-child(5) {
       grid-column: 4 / 5;
     }
   }
+
+  // School Management Container
   .menu:nth-child(2) .menu__container {
     left: 0;
     width: 100%;
