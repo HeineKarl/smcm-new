@@ -7,7 +7,6 @@
 }
 
 body {
-  overflow: hidden;
   font-family: "Source Serif Pro";
 }
 
@@ -147,7 +146,7 @@ ul {
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   width: 270px;
   min-height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0px;
   -webkit-transform: translateX(280px);
@@ -520,5 +519,99 @@ ul {
     left: 0;
     width: 100%;
   }
+}
+
+.main {
+  background-color: #ffffff;
+  height: 85vh;
+}
+
+.main__right {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 12em 1fr;
+      grid-template-rows: 12em 1fr;
+  position: relative;
+}
+
+.slider {
+  width: 250px;
+  height: 150px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+.slider__tracker {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.slider__img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 15%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.prev-btn {
+  top: 0;
+  left: 0;
+}
+
+.next-btn {
+  top: 0;
+  right: 0;
+}
+
+.test {
+  background-color: green;
+  height: 1000px;
 }
 /*# sourceMappingURL=style.css.map */

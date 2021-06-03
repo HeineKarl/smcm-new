@@ -140,6 +140,70 @@ const setDropdown = () => {
   });
 };
 
+const setSlider = () => {
+  const tracker = document.querySelector(".slider__tracker");
+  const slides = Array.from(tracker.children);
+  const slidesWidth = slides[0].getBoundingClientRect().width;
+  const marginSize = 20;
+  const position = (slide, index) => {
+    slide.style.left = `${slidesWidth * index}px `;
+    slide.style.marginLeft = `${index * marginSize}px`;
+  };
+  slides.forEach(position);
+
+  const moveSlide = (track, currentSlide, targetSlide, marginTracker) => {
+    const sizeSlide = parseInt(targetSlide.style.left);
+
+    track.style.transform = `translateX(-${sizeSlide + marginTracker}px)`;
+    currentSlide.classList.remove("current-slide");
+    targetSlide.classList.add("current-slide");
+  };
+
+  const nextBtn = document.querySelector(".next-btn");
+
+  const nextEvent = () => {
+    const currentSlide = tracker.querySelector(".current-slide");
+    const nextSlide = currentSlide.nextElementSibling;
+    const marginTracker = (slides.indexOf(currentSlide) + 1) * marginSize;
+
+    if (nextSlide === null) {
+      return;
+    }
+
+    moveSlide(tracker, currentSlide, nextSlide, marginTracker);
+  };
+  nextBtn.addEventListener("click", nextEvent);
+
+  const prevBtn = document.querySelector(".prev-btn");
+  prevBtn.addEventListener("click", () => {
+    const currentSlide = tracker.querySelector(".current-slide");
+    const prevSlide = currentSlide.previousElementSibling;
+    const marginTracker = (slides.indexOf(currentSlide) - 1) * marginSize;
+
+    if (prevSlide === null) {
+      return;
+    }
+
+    moveSlide(tracker, currentSlide, prevSlide, marginTracker);
+  });
+
+  const restartSlides = () => {
+    const firstSlide = tracker.firstElementChild;
+    const lastSlide = tracker.lastElementChild;
+
+    if (lastSlide.classList.contains("current-slide")) {
+      tracker.style.transform = `translateX(${0}px)`;
+      lastSlide.classList.remove("current-slide");
+      firstSlide.classList.add("current-slide");
+    } else {
+      nextEvent();
+    }
+  };
+
+  setInterval(restartSlides, 3000);
+};
+
+// Setting Functions in right window size
 const setFunction = (num) => {
   // num = 0 is mobile
   // num = 1 is tablet
@@ -147,6 +211,7 @@ const setFunction = (num) => {
   if (num === 0) {
     setNavigation();
     setAccordion();
+    setSlider();
   } else if (num === 1) {
     // alert("Tablet");
     setNavigation();
