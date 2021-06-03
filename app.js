@@ -143,8 +143,13 @@ const setDropdown = () => {
 const setSlider = () => {
   const tracker = document.querySelector(".slider__tracker");
   const slides = Array.from(tracker.children);
+  const dotTracker = document.querySelector(".slider__dots");
+  const dots = Array.from(dotTracker.children);
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
   const slidesWidth = slides[0].getBoundingClientRect().width;
   const marginSize = 20;
+
   const position = (slide, index) => {
     slide.style.left = `${slidesWidth * index}px `;
     slide.style.marginLeft = `${index * marginSize}px`;
@@ -159,42 +164,71 @@ const setSlider = () => {
     targetSlide.classList.add("current-slide");
   };
 
-  const nextBtn = document.querySelector(".next-btn");
+  const moveDot = (currentDot, targetDot) => {
+    currentDot.classList.remove("current-dot");
+    targetDot.classList.add("current-dot");
+  };
 
   const nextEvent = () => {
     const currentSlide = tracker.querySelector(".current-slide");
     const nextSlide = currentSlide.nextElementSibling;
     const marginTracker = (slides.indexOf(currentSlide) + 1) * marginSize;
 
+    const currentDot = dotTracker.querySelector(".current-dot");
+    const nextDot = currentDot.nextElementSibling;
+
     if (nextSlide === null) {
       return;
     }
 
     moveSlide(tracker, currentSlide, nextSlide, marginTracker);
+    moveDot(currentDot, nextDot);
   };
   nextBtn.addEventListener("click", nextEvent);
 
-  const prevBtn = document.querySelector(".prev-btn");
   prevBtn.addEventListener("click", () => {
     const currentSlide = tracker.querySelector(".current-slide");
     const prevSlide = currentSlide.previousElementSibling;
     const marginTracker = (slides.indexOf(currentSlide) - 1) * marginSize;
+
+    const currentDot = dotTracker.querySelector(".current-dot");
+    const prevDot = currentDot.previousElementSibling;
 
     if (prevSlide === null) {
       return;
     }
 
     moveSlide(tracker, currentSlide, prevSlide, marginTracker);
+    moveDot(currentDot, prevDot);
   });
+
+  const dotsEvent = (e) => {
+    const targetDot = e.target.closest("span");
+
+    if (!targetDot) return;
+    const currentDot = dotTracker.querySelector(".current-dot");
+    const currentSlide = tracker.querySelector(".current-slide");
+    const targetIndex = dots.findIndex((dot) => dot === targetDot);
+    const targetSlide = slides[targetIndex];
+    const marginTracker = (slides.indexOf(currentSlide) - 1) * marginSize;
+
+    moveSlide(tracker, currentSlide, targetSlide, marginTracker);
+    moveDot(currentDot, targetDot);
+  };
+  dotTracker.addEventListener("click", dotsEvent);
 
   const restartSlides = () => {
     const firstSlide = tracker.firstElementChild;
     const lastSlide = tracker.lastElementChild;
+    const firstDot = dotTracker.firstElementChild;
+    const lastDot = dotTracker.lastElementChild;
 
     if (lastSlide.classList.contains("current-slide")) {
       tracker.style.transform = `translateX(${0}px)`;
       lastSlide.classList.remove("current-slide");
       firstSlide.classList.add("current-slide");
+      lastDot.classList.remove("current-dot");
+      firstDot.classList.add("current-dot");
     } else {
       nextEvent();
     }
