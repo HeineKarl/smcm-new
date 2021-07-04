@@ -1,7 +1,7 @@
 .hero {
   background-color: $primaryColor200;
-  height: 91.5px;
-  min-height: 91.5px;
+  height: 6.5em;
+  min-height: 6.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,8 +22,9 @@
   }
 
   &__logo {
-    width: 60px;
-    height: 60px;
+    --logoSize: 5em;
+    width: var(--logoSize);
+    height: var(--logoSize);
   }
 
   &__name {
@@ -34,12 +35,12 @@
     color: $secondaryColor;
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-weight: 500;
     }
 
     h2 {
-      font-size: 0.8rem;
+      font-size: 1em;
       font-weight: 400;
     }
   }
@@ -88,6 +89,7 @@
   position: fixed;
   top: 0;
   right: 0px;
+  z-index: 100;
   transform: translateX(280px);
   transition: all 500ms ease-in-out;
 
@@ -256,56 +258,22 @@
 .drop-active {
   background-color: #eeeeee;
 }
-
-@media (min-width: 481px) and (max-width: 980px) {
-  .hero {
-    height: 98.5px;
-    min-height: 98.5px;
-    &__logo {
-      width: 75px;
-      height: 75px;
-    }
-
-    &__name {
-      h1 {
-        font-size: 1.8rem;
-        font-weight: 500;
-      }
-
-      h2 {
-        font-size: 0.9rem;
-        font-weight: 400;
-      }
-    }
+// Tablet Media Query
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+  html {
+    font-size: 18px;
   }
 }
-@media (min-width: 981px) {
+@media (min-width: $minWidthDesktop) {
+  html {
+    font-size: 21px;
+  }
   .hero {
-    // background-color: green;
-    height: 112px;
-    min-height: 112px;
-
     &__signature {
-      width: 300px;
+      width: 400px;
       justify-content: space-evenly;
     }
 
-    &__logo {
-      width: 90px;
-      height: 90px;
-    }
-
-    &__name {
-      h1 {
-        font-size: 2rem;
-        font-weight: 500;
-      }
-
-      h2 {
-        font-size: 1rem;
-        font-weight: 400;
-      }
-    }
     &__hamburger {
       display: none;
     }
