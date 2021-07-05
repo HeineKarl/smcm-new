@@ -55,9 +55,6 @@ const prevEvent = () => {
     return;
   }
 
-  // tracker.style.transform = `translateX(-${prevSlide.style.left})`;
-  // currentSlide.classList.remove("current-slide");
-  // prevSlide.classList.add("current-slide");
   moveSlide(tracker, currentSlide, prevSlide);
   moveDot(currentDot, prevDot);
 };
@@ -88,16 +85,15 @@ window.addEventListener("resize", () => {
   // Set its slides on the first slide
   const firstSlide = tracker.firstElementChild;
   const currentSlide = tracker.querySelector(".current-slide");
-  const lastSlide = tracker.lastElementChild;
-  //   const firstDot = dotTracker.firstElementChild;
-  //   const lastDot = dotTracker.lastElementChild;
+  const firstDot = dotTracker.firstElementChild;
+  const currentDot = dotTracker.querySelector(".current-dot");
 
   if (!firstSlide.classList.contains("current-slide")) {
     currentSlide.classList.remove("current-slide");
     firstSlide.classList.add("current-slide");
     tracker.style.transform = `translateX(${0}px)`;
-    // lastDot.classList.remove("current-dot");
-    // firstDot.classList.add("current-dot");
+    currentDot.classList.remove("current-dot");
+    firstDot.classList.add("current-dot");
     return;
   }
 

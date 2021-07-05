@@ -141,9 +141,15 @@ const setDropdown = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const mQuery = window.matchMedia("(min-width: 0em) and (max-width: 24em)");
-  const tQuery = window.matchMedia("(min-width: 24em) and (max-width: 89em)");
-  const dQuery = window.matchMedia("(min-width: 90em)");
+  let minWidthTablet = 28;
+  let maxWidthTablet = 50;
+  const mQuery = window.matchMedia(
+    `(min-width: 0em) and (max-width: ${minWidthTablet}em)`
+  );
+  const tQuery = window.matchMedia(
+    `(min-width: ${minWidthTablet}em) and (max-width: ${maxWidthTablet}em)`
+  );
+  const dQuery = window.matchMedia(`(min-width: ${maxWidthTablet}em)`);
 
   if (mQuery.matches) {
     console.log("Mobile");
