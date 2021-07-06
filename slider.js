@@ -102,7 +102,7 @@ window.addEventListener("resize", () => {
       setTimeout(resizeend, delta);
     } else {
       timeout = false;
-      console.log("Done resizing");
+      console.log("Done resizing Slider");
 
       const slides = Array.from(tracker.children);
       const slideWidth = slides[1].getBoundingClientRect().width;

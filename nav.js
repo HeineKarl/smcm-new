@@ -1,5 +1,5 @@
-// Open and Close Side Navigation
-const setNavigation = () => {
+const setAccordion = () => {
+  // Open and Close Side Navigation
   const openBtn = document.querySelector(".hero__hamburger");
   const closeBtn = document.querySelector(".close-btn");
   const navigation = document.querySelector(".navigation");
@@ -10,10 +10,8 @@ const setNavigation = () => {
   closeBtn.addEventListener("click", () => {
     navigation.classList.remove("open-nav");
   });
-};
 
-// Open and Close Accordion Navigation Links
-const setAccordion = () => {
+  // Open and Close Accordion Navigation Links
   const menu = document.querySelectorAll(".menu");
   const menuBtn = document.querySelectorAll(".menu__btn");
   const arrowBtn = document.querySelectorAll(".fa-angle-down");
@@ -142,7 +140,7 @@ const setDropdown = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   let minWidthTablet = 28;
-  let maxWidthTablet = 50;
+  let maxWidthTablet = 57.75;
   const mQuery = window.matchMedia(
     `(min-width: 0em) and (max-width: ${minWidthTablet}em)`
   );
@@ -153,16 +151,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mQuery.matches) {
     console.log("Mobile");
-    setNavigation();
+    document.body.classList.add("M");
+    document.body.classList.remove("T");
+    document.body.classList.remove("D");
     setAccordion();
   }
   if (tQuery.matches) {
     console.log("Tablet");
-    setNavigation();
+    document.body.classList.add("T");
+    document.body.classList.remove("M");
+    document.body.classList.remove("D");
     setAccordion();
   }
   if (dQuery.matches) {
     console.log("Desktop");
+    document.body.classList.add("D");
+    document.body.classList.remove("M");
+    document.body.classList.remove("T");
     setDropdown();
+  }
+
+  return;
+});
+
+let rtimeNav;
+let timeoutNav = false;
+let deltaNav = 200;
+
+window.addEventListener("resize", () => {
+  const resizeendNav = () => {
+    if (new Date() - rtimeNav < deltaNav) {
+      setTimeout(resizeendNav, deltaNav);
+    } else {
+      timeoutNav = false;
+      console.log("Done Resizing Nav");
+
+      let minWidthTablet = 28.5;
+      let maxWidthTablet = 57.75;
+      const mQuery = window.matchMedia(
+        `(min-width: 0em) and (max-width: ${minWidthTablet}em)`
+      );
+      const tQuery = window.matchMedia(
+        `(min-width: ${minWidthTablet}em) and (max-width: ${maxWidthTablet}em)`
+      );
+      const dQuery = window.matchMedia(`(min-width: ${maxWidthTablet}em)`);
+      const body = document.querySelector("body");
+      let goLoad = false;
+      console.log(body.scrollWidth < 1000 && body.scrollWidth > 400);
+      if (body.scrollWidth < 456 && body.classList.contains("M")) {
+        return;
+      }
+      if (
+        body.scrollWidth < 924 &&
+        body.scrollWidth > 456 &&
+        body.classList.contains("T")
+      ) {
+        return;
+      }
+      if (
+        body.scrollWidth < 1600 &&
+        body.scrollWidth > 924 &&
+        body.classList.contains("D")
+      ) {
+        return;
+      }
+
+      // if (goLoad === true) {
+      // }
+      window.location.reload();
+
+      // if (mQuery.matches) {
+      //   console.log("Mobile");
+      //   setAccordion();
+      // }
+      // if (tQuery.matches) {
+      //   console.log("Tablet");
+      //   setAccordion();
+      // }
+      // if (dQuery.matches) {
+      //   console.log("Desktop");
+      //   setDropdown();
+      // }
+    }
+  };
+
+  rtimeNav = new Date();
+  if (timeoutNav === false) {
+    timeoutNav = true;
+    setTimeout(resizeendNav, deltaNav);
   }
 });

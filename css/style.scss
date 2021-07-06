@@ -13,7 +13,8 @@ $primaryColor300: #b6b6b6;
 $darkColor900: #000000;
 $secondaryColor: #131966;
 
-$minWidthTablet: 28em;
+// The variables here is also in JS Nav
+$minWidthTablet: 28.5em;
 $maxWidthTablet: 57.75em;
 $minWidthDesktop: 57.75em;
 
@@ -242,7 +243,7 @@ $imageHeight: 125px;
 
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(0, -55%);
   z-index: 50;
   cursor: pointer;
   &:hover {

@@ -366,7 +366,7 @@ ul {
   background-color: #eeeeee;
 }
 
-@media (min-width: 28em) and (max-width: 57.75em) {
+@media (min-width: 28.5em) and (max-width: 57.75em) {
   html {
     font-size: 18px;
   }
@@ -747,8 +747,8 @@ ul {
           justify-content: center;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -webkit-transform: translate(0, -55%);
+          transform: translate(0, -55%);
   z-index: 50;
   cursor: pointer;
 }
@@ -781,7 +781,7 @@ ul {
   border-radius: 50%;
 }
 
-@media (min-width: 28em) and (max-width: 57.75em) {
+@media (min-width: 28.5em) and (max-width: 57.75em) {
   .main {
     font-size: 24px;
     -ms-grid-rows: 15em 1fr;
