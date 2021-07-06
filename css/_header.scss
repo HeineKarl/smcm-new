@@ -2,23 +2,23 @@
   background-color: $primaryColor200;
   height: 6.5em;
   min-height: 6.5em;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  // position: absolute;
-  // top: 0;
 
   &__inner {
     width: 90%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
 
   &__signature {
-    // background-color: tomato;
     width: 90%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,11 +31,12 @@
   }
 
   &__name {
+    color: $secondaryColor;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: $secondaryColor;
 
     h1 {
       font-size: clamp(1.25em, 4vw, 1.5em);
@@ -47,17 +48,22 @@
       font-weight: 400;
     }
   }
+
   &__hamburger {
+    --whsize: 30px;
+    height: var(--whsize);
+    width: var(--whsize);
+
     display: inline-block;
-    height: 30px;
-    width: 30px;
     position: relative;
     cursor: pointer;
+
     div {
       background-color: $secondaryColor;
       width: 21px;
       height: 3px;
       border-radius: 8px;
+
       position: absolute;
       top: 50%;
       left: 50%;
@@ -89,6 +95,7 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   width: 270px;
   min-height: 100%;
+
   position: fixed;
   top: 0;
   right: 0px;
@@ -98,8 +105,10 @@
 
   &__inner {
     height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     overflow-y: scroll;
     scrollbar-width: thin;
   }
@@ -108,11 +117,13 @@
     background-color: $primaryColor200;
     height: 180px;
     min-height: 180px;
+    padding: 0.5em 0em;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 0.5em 0em;
+
     position: sticky;
     top: 0;
     left: 0;
@@ -131,18 +142,21 @@
   }
 
   &__logo {
-    width: 90px;
-    height: 90px;
+    --whsize: 90px;
+    width: var(--whsize);
+    height: var(--whsize);
   }
 
   &__name {
     color: $secondaryColor;
     border-bottom: 1px solid black;
     padding: 0em 1.5em 0.5em;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     h1 {
       font-size: 1.5rem;
       font-weight: 500;
@@ -153,6 +167,7 @@
       font-weight: 400;
     }
   }
+
   &__body {
     flex-grow: 10;
     height: auto;
@@ -161,13 +176,16 @@
   &__footer {
     min-height: 40px;
     height: 40px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     h6 {
       font-size: 10px;
     }
+
     p {
       font-size: 9px;
     }
@@ -179,17 +197,19 @@
   transition: all 500ms ease-in-out;
 
   &__btn {
-    // background-color: green;
     border-radius: 3px;
     width: 100%;
     padding: 1.5em 2em 1.5em 1.5em;
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: pointer;
+
     span {
       transition: all 300ms ease-in-out;
     }
+
     &:hover {
       background: #d3d2d2;
     }
@@ -197,10 +217,8 @@
 
   &__container {
     background-color: #e6e6e6;
-    // background-color: lightblue;
     overflow: hidden;
     width: 100%;
-    // width: fit-content;
 
     // Needed for the collapsing
     padding: 0 0.25em;
@@ -210,19 +228,16 @@
     transition: all 400ms ease-in-out;
   }
   &__box {
-    // background-color: lightblue;
-    // width: fit-content;
-    // li {
-    //   width: fit-content;
-    // }
     a {
       color: $darkColor900;
-      font-weight: 300;
-      font-size: 14px;
-      font-family: $Poppins;
       border-radius: 3px;
       padding: 0.5em 1em;
       text-decoration: none;
+
+      font-weight: 300;
+      font-size: 14px;
+      font-family: $Poppins;
+
       display: inline-block;
       width: 100%;
       height: 100%;
@@ -238,10 +253,10 @@
   }
   &__section {
     h3 {
+      border-bottom: 1px solid black;
       margin: 3px 0;
       padding: 0.25em 0 0.25em 0em;
       text-align: center;
-      border-bottom: 1px solid black;
     }
   }
 }
@@ -268,26 +283,23 @@
 .drop-active {
   background-color: #eeeeee;
 }
+
 // Tablet Media Query
 @media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
   html {
     font-size: 18px;
   }
 }
+
 @media (min-width: $minWidthDesktop) {
   html {
     font-size: 21px;
   }
   .hero {
-    // &__inner {
-    //   width: clamp(85%, 3vw, 90%);
-    // }
-
     &__signature {
-      // width: clamp(18em, 3vw, 21em);
+      margin-right: clamp(0.5em, 3vw, 2em);
       width: 18em;
       justify-content: space-evenly;
-      margin-right: clamp(0.5em, 3vw, 2em);
     }
 
     &__hamburger {
@@ -296,9 +308,9 @@
   }
 
   .navigation {
-    // background-color: tomato;
     height: 100%;
     width: 60%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +320,6 @@
     position: static;
 
     &__inner {
-      // background-color: rosybrown;
       height: 90%;
       width: 100%;
       overflow-y: hidden;
@@ -323,11 +334,13 @@
       height: 100%;
       width: 100%;
       padding: 0;
+
       display: flex;
       flex-direction: row;
       align-items: flex-end;
       justify-content: space-evenly;
     }
+
     &__footer {
       display: none;
     }
@@ -347,18 +360,18 @@
     &__container {
       position: absolute;
       width: clamp(8em, 18vw, 13em);
-      // width: 100%;
       border-radius: 3px;
     }
 
     // School Management
     &__mega {
       height: 23rem;
+      padding: 2em;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 10% 90%;
       gap: 1em 0em;
-      padding: 2em;
     }
 
     &__header {
