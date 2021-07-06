@@ -94,6 +94,8 @@ $imageHeight: 125px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 13em 1fr;
+  min-height: 40em;
+  max-height: 40em;
 
   &__left {
     grid-row: 2 / 3;
@@ -311,7 +313,7 @@ $imageHeight: 125px;
 @media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
   .main {
     font-size: 24px;
-    grid-template-rows: 14em 1fr;
+    grid-template-rows: 15em 1fr;
     grid-template-columns: 1fr;
 
     &__right {

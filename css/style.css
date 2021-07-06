@@ -548,6 +548,8 @@ ul {
       grid-template-columns: 1fr;
   -ms-grid-rows: 13em 1fr;
       grid-template-rows: 13em 1fr;
+  min-height: 40em;
+  max-height: 40em;
 }
 
 .main__left {
@@ -822,8 +824,8 @@ ul {
 @media (min-width: 28.5em) and (max-width: 57.75em) {
   .main {
     font-size: 24px;
-    -ms-grid-rows: 14em 1fr;
-        grid-template-rows: 14em 1fr;
+    -ms-grid-rows: 15em 1fr;
+        grid-template-rows: 15em 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
