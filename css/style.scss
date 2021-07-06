@@ -18,6 +18,10 @@ $minWidthTablet: 28.5em;
 $maxWidthTablet: 57.75em;
 $minWidthDesktop: 57.75em;
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +32,7 @@ body {
   // height: 100vh;
   // overflow: hidden;
   font-family: "Source Serif Pro";
+  transition: all 500ms ease-in-out;
 }
 
 img {
@@ -47,6 +52,36 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.bring-top {
+  --size: 3em;
+  width: var(--size);
+  height: var(--size);
+  // padding: 0.6em;
+  background-color: $primaryColor300;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-size: 1em;
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  z-index: 150;
+
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 500ms ease-in-out;
+
+  &:hover {
+    background-color: #9b9898;
+  }
+}
+
+.bring-show {
+  transform: translateY(0px);
+  opacity: 1;
+  pointer-events: all;
 }
 
 @import "./_header.scss";
@@ -233,7 +268,7 @@ $imageHeight: 125px;
   background-color: transparent;
   border-radius: 3px;
   color: rgba(0, 0, 0, 0.3);
-  height: 10em;
+  height: 5em;
   width: 2.25em;
   text-align: center;
   display: flex;
@@ -243,7 +278,7 @@ $imageHeight: 125px;
 
   position: absolute;
   top: 50%;
-  transform: translate(0, -55%);
+  transform: translate(0, -75%);
   z-index: 50;
   cursor: pointer;
   &:hover {
@@ -276,7 +311,7 @@ $imageHeight: 125px;
 @media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
   .main {
     font-size: 24px;
-    grid-template-rows: 15em 1fr;
+    grid-template-rows: 14em 1fr;
     grid-template-columns: 1fr;
 
     &__right {

@@ -1,3 +1,18 @@
+const topBtn = document.querySelector(".bring-top");
+
+topBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 400) {
+    topBtn.classList.add("bring-show");
+  } else {
+    topBtn.classList.remove("bring-show");
+  }
+});
+
 const setAccordion = () => {
   // Open and Close Side Navigation
   const openBtn = document.querySelector(".hero__hamburger");

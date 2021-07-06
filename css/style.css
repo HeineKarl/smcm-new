@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&family=Source+Serif+Pro&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +12,8 @@
 
 body {
   font-family: "Source Serif Pro";
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 img {
@@ -28,6 +34,38 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.bring-top {
+  --size: 3em;
+  width: var(--size);
+  height: var(--size);
+  background-color: #b6b6b6;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-size: 1em;
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  z-index: 150;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.bring-top:hover {
+  background-color: #9b9898;
+}
+
+.bring-show {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .hero {
@@ -729,7 +767,7 @@ ul {
   background-color: transparent;
   border-radius: 3px;
   color: rgba(0, 0, 0, 0.3);
-  height: 10em;
+  height: 5em;
   width: 2.25em;
   text-align: center;
   display: -webkit-box;
@@ -747,8 +785,8 @@ ul {
           justify-content: center;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -55%);
-          transform: translate(0, -55%);
+  -webkit-transform: translate(0, -75%);
+          transform: translate(0, -75%);
   z-index: 50;
   cursor: pointer;
 }
@@ -784,8 +822,8 @@ ul {
 @media (min-width: 28.5em) and (max-width: 57.75em) {
   .main {
     font-size: 24px;
-    -ms-grid-rows: 15em 1fr;
-        grid-template-rows: 15em 1fr;
+    -ms-grid-rows: 14em 1fr;
+        grid-template-rows: 14em 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
