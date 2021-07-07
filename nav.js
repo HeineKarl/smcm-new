@@ -211,8 +211,7 @@ window.addEventListener("resize", () => {
       );
       const dQuery = window.matchMedia(`(min-width: ${maxWidthTablet}em)`);
       const body = document.querySelector("body");
-      let goLoad = false;
-      console.log(body.scrollWidth < 1000 && body.scrollWidth > 400);
+
       if (body.scrollWidth < 456 && body.classList.contains("M")) {
         return;
       }
@@ -231,22 +230,7 @@ window.addEventListener("resize", () => {
         return;
       }
 
-      // if (goLoad === true) {
-      // }
       window.location.reload();
-
-      // if (mQuery.matches) {
-      //   console.log("Mobile");
-      //   setAccordion();
-      // }
-      // if (tQuery.matches) {
-      //   console.log("Tablet");
-      //   setAccordion();
-      // }
-      // if (dQuery.matches) {
-      //   console.log("Desktop");
-      //   setDropdown();
-      // }
     }
   };
 
