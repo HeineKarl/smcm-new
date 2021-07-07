@@ -5,6 +5,7 @@ const prevBtn = document.querySelector(".prev-btn");
 const slideWidth = slides[1].getBoundingClientRect().width;
 const dotTracker = document.querySelector(".slider__dots");
 const dots = Array.from(dotTracker.children);
+const stopBtn = document.querySelector(".slider__stop");
 
 // Set the Slides in their position
 const setSliderPosition = (slide, index) => {
@@ -26,7 +27,7 @@ const moveDot = (currentDot, targetDot) => {
 };
 
 // Next Button
-const nextEvent = () => {
+const nextEvent = (e) => {
   const currentSlide = tracker.querySelector(".current-slide");
   const nextSlide = currentSlide.nextElementSibling;
 
@@ -39,6 +40,7 @@ const nextEvent = () => {
 
   moveSlide(tracker, currentSlide, nextSlide);
   moveDot(currentDot, nextDot);
+  // waitSlide(e ? e : null);
 };
 nextBtn.addEventListener("click", nextEvent);
 
@@ -92,7 +94,86 @@ const restartSlides = () => {
   }
 };
 // Time 4.5s for restarting Slides
-setInterval(restartSlides, 4500);
+// setInterval(restartSlides, 4500);
+
+const waitSlide = (e) => {
+  let rtimeTarget,
+    timeoutTarget = false,
+    deltaTarget = 5000,
+    restartTime = 3000;
+  // if (e === null) {
+  //   return;
+  // }
+
+  // interval = setInterval(restartSlides, restartTime);
+
+  // console.log(interval);
+  // const isClicked = nextBtn.contains(e.target);
+  // if (isClicked) {
+  //   console.log("LIS");
+  //   console.log(clearInterval(interval));
+  //   clearTimeInterval();
+  //   console.log(clearTimeInterval());
+  // }
+
+  const resizeend = () => {
+    if (new Date() - rtimeTarget < deltaTarget) {
+      // Wait for the resize to end
+      setTimeout(resizeend, deltaTarget);
+    } else {
+      console.log("Waiting");
+      timeoutTarget = false;
+      restartTime = 3000;
+      setInterval(restartSlides, restartTime);
+    }
+  };
+
+  // if (isClicked) {
+  //   console.log(isClicked, "CLICK");
+  //   clearInterval(interval);
+  rtimeTarget = new Date();
+  // Set the resize to end
+  if (timeoutTarget === false) {
+    timeoutTarget = true;
+    setTimeout(resizeend, deltaTarget);
+  }
+  // }
+
+  // if (!isClicked) {
+  //   console.log(!isClicked, "Not CLICK");
+  //   restartTime = 3000;
+  //   console.log(restartTime, "Gee");
+  //   // console.log(interval());
+  //   return;
+  // }
+};
+// waitSlide(nextBtn);
+let restartTime = 3000;
+let interval;
+
+const autoSlider = () => {
+  interval = setInterval(restartSlides, restartTime);
+};
+autoSlider();
+
+const stopEvent = (e) => {
+  const icon = stopBtn.querySelector("i");
+  let isClicked = stopBtn.contains(e.target);
+
+  if (isClicked && icon.classList[1] === "fa-stop") {
+    clearInterval(interval);
+    icon.classList.remove("fa-stop");
+    icon.classList.add("fa-play");
+    stopBtn.style.backgroundColor = "Green";
+  } else {
+    interval = setInterval(restartSlides, restartTime);
+    icon.classList.remove("fa-play");
+    icon.classList.add("fa-stop");
+    stopBtn.style.backgroundColor = "Red";
+  }
+};
+
+stopBtn.addEventListener("click", stopEvent);
 
 let rtime;
 let timeout = false;
