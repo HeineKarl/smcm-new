@@ -955,4 +955,199 @@ ul {
     border-radius: 50%;
   }
 }
+
+.marian {
+  height: 600px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 8em 24em;
+      grid-template-rows: 8em 24em;
+  overflow: hidden;
+}
+
+.marian__heading {
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.marian__heading h2 {
+  font-size: 1.75em;
+}
+
+.marian__heading p {
+  font-size: 0.6em;
+}
+
+.marian__news {
+  width: 100%;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.marian__card {
+  width: 70%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+}
+
+.marian__img {
+  width: 14em;
+  height: 10em;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.marian__journal {
+  --border-left-right: 20px;
+  --transformY: -3.75em;
+  -webkit-transform: translateY(var(--transformY));
+          transform: translateY(var(--transformY));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.journal {
+  --neomorp: -3px -3px 5px rgba(255, 255, 255, 0.7),
+    3px 3px 5px rgba(17, 17, 17, 0.2);
+  background-color: white;
+  -webkit-box-shadow: var(--neomorp);
+          box-shadow: var(--neomorp);
+  width: 11em;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.journal__heading {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 0.6em;
+}
+
+.journal__heading > div:first-child h3 {
+  font-weight: 900;
+  font-size: 0.75em;
+}
+
+.journal__heading > div:first-child p {
+  color: gray;
+  font-size: 0.5em;
+}
+
+.journal__heading > div:last-child {
+  --img-wh: 35px;
+  width: var(--img-wh);
+  height: var(--img-wh);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.journal__tags {
+  height: 1.25em;
+  padding: 0.2em 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.journal__tags > div {
+  outline: 1px solid black;
+  padding: 0.05em 0.7em;
+  border-radius: 20px;
+  font-size: 0.5em;
+}
+
+.journal__tags > div:not(:first-child) {
+  margin: 0 0 0 5px;
+}
+
+.journal__reaction {
+  height: 1.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1em;
+}
+
+.journal__reaction > div:first-child {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 0.6em;
+}
+
+.journal__reaction > div:first-child div:not(:first-child) {
+  margin: 0 0 0 5px;
+}
+
+.journal__reaction > div:last-child {
+  font-size: 0.5em;
+}
 /*# sourceMappingURL=style.css.map */
