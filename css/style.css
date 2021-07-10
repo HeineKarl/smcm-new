@@ -48,7 +48,7 @@ ul {
   position: fixed;
   right: 2em;
   bottom: 2em;
-  z-index: 150;
+  z-index: 20;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
   opacity: 0;
@@ -544,7 +544,6 @@ ul {
 .main {
   --minmaxheight: 40em;
   background-color: #ffffff;
-  height: 85vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -569,7 +568,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
 }
 
 .main__years h2 {
@@ -779,10 +778,12 @@ ul {
   bottom: -10%;
   left: 50%;
   opacity: 0.2;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
   z-index: 20;
 }
 
-.slider__stop:hover {
+.slider__stop:hover, .slider__stop:active {
   opacity: 0.7;
 }
 
@@ -845,11 +846,15 @@ ul {
 
 @media (min-width: 28.5em) and (max-width: 57.75em) {
   .main {
+    --minmaxheight: 36em;
     font-size: 24px;
     -ms-grid-rows: 15em 1fr;
         grid-template-rows: 15em 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .main__years h2 {
+    font-size: 5em;
   }
   .main__right {
     -ms-grid-rows: 18em 1fr;
@@ -857,6 +862,7 @@ ul {
   }
   .main__container {
     font-size: clamp(14px, 3vw, 18px);
+    height: 28rem;
   }
   .main__container .heading {
     font-size: clamp(18px, 3vw, 26px);
@@ -1001,7 +1007,9 @@ ul {
 }
 
 .marian__card {
-  width: 70%;
+  --card-width: 15.75em;
+  width: var(--card-width);
+  max-width: var(--card-width);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -1019,12 +1027,16 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
 .marian__img {
   width: 14em;
   height: 10em;
   border-radius: 15px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
@@ -1045,8 +1057,7 @@ ul {
 }
 
 .journal {
-  --neomorp: -3px -3px 5px rgba(255, 255, 255, 0.7),
-    3px 3px 5px rgba(17, 17, 17, 0.2);
+  --neomorp: 0px 0px 5px rgba(94, 94, 94, 0.7);
   background-color: white;
   -webkit-box-shadow: var(--neomorp);
           box-shadow: var(--neomorp);
@@ -1085,7 +1096,7 @@ ul {
 }
 
 .journal__heading > div:last-child {
-  --img-wh: 35px;
+  --img-wh: 2.125em;
   width: var(--img-wh);
   height: var(--img-wh);
   border-radius: 50%;
@@ -1106,7 +1117,7 @@ ul {
 .journal__tags > div {
   outline: 1px solid black;
   padding: 0.05em 0.7em;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 0.5em;
 }
 
@@ -1149,5 +1160,43 @@ ul {
 
 .journal__reaction > div:last-child {
   font-size: 0.5em;
+}
+
+@media (min-width: 28.5em) and (max-width: 57.75em) {
+  .marian {
+    font-size: 21px;
+  }
+  .marian__card {
+    font-size: clamp(1em, 4vw, 1.15em);
+  }
+  .journal__heading > div:first-child h3 {
+    font-size: clamp(0.85em, 2vw, 1.25em);
+  }
+  .journal__heading > div:first-child p {
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 57.75em) {
+  .marian {
+    font-size: 22px;
+    height: 800px;
+  }
+  .marian__img {
+    width: 15em;
+  }
+  .marian__card {
+    font-size: clamp(1.25em, 4vw, 1.35em);
+    --card-width: 16em;
+  }
+  .journal {
+    width: 13em;
+  }
+  .journal__heading > div:first-child h3 {
+    font-size: clamp(0.85em, 2vw, 0.95em);
+  }
+  .journal__heading > div:first-child p {
+    font-size: 0.6em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

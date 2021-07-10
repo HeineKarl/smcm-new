@@ -1,6 +1,5 @@
 const newsCon = document.querySelector(".marian__news"),
-  newsCards = Array.from(newsCon.querySelectorAll(".marian__card")),
-  newsCardWidth = newsCards[0].getBoundingClientRect().width;
+  newsCards = Array.from(newsCon.querySelectorAll(".marian__card"));
 
 let isDragging = false,
   startPos = 0,
@@ -10,9 +9,7 @@ let isDragging = false,
   currentIndex = 0;
 
 // Logic for the positioning
-let fullWidth = window.innerWidth,
-  cardWidth = newsCards[0].clientWidth,
-  marginSize = (fullWidth - cardWidth) / 2;
+let fullWidth, cardWidth, marginSize, newsCardWidth;
 
 window.oncontextmenu = (e) => {
   e.preventDefault();
@@ -20,8 +17,42 @@ window.oncontextmenu = (e) => {
   return false;
 };
 
+window.addEventListener("resize", responsive);
+
+let rtimeCard;
+let timeoutCard = false;
+let deltaCard = 500;
+
+function responsive() {
+  function resizeend() {
+    if (new Date() - rtimeCard < deltaCard) {
+      // Wait for the resize to end
+      setTimeout(resizeend, deltaCard);
+    } else {
+      timeoutCard = false;
+      console.log("set");
+      // if (currentIndex !== 0) {
+      //   newsCon.style.transform = `translateX(0px)`;
+      // }
+
+      newsCards.forEach((newsCard, index) => {
+        newsCard.style.left = `${getCardWidth() * index + getMargin()}px`;
+      });
+    }
+  }
+
+  rtimeCard = new Date();
+  // Set the resize to end
+  if (timeoutCard === false) {
+    timeoutCard = true;
+    setTimeout(resizeend, deltaCard);
+  }
+}
+
 newsCards.forEach((newsCard, index) => {
-  newsCard.style.left = `${newsCardWidth * index + marginSize}px`;
+  // Positioning in the right place
+  newsCard.style.left = `${getCardWidth() * index + getMargin()}px`;
+  // Preventing image to drag
   const newsImage = newsCard.querySelector("img");
   newsImage.addEventListener("dragstart", (e) => e.preventDefault());
 
@@ -79,10 +110,25 @@ function setNewsCardPos() {
 }
 
 function setPosByIndex() {
-  currentTranslate = currentIndex * -cardWidth;
+  currentTranslate = currentIndex * -getCardWidth();
   prevTranslate = currentTranslate;
   setNewsCardPos();
 }
 
-// Thanks to Traversy Media, I have generated ideas for the
-// logic he published and I had reviewed it before executing it.
+// Getting the exact Width
+
+function getCardWidth() {
+  return (newsCardWidth = newsCards[0].getBoundingClientRect().width);
+}
+
+function getWidth() {
+  return (fullWidth = window.innerWidth);
+}
+
+function getMargin() {
+  fullWidth = window.innerWidth;
+  cardWidth = newsCards[0].clientWidth;
+  marginSize = (fullWidth - cardWidth) / 2;
+
+  return marginSize;
+}

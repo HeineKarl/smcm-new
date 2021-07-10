@@ -3,7 +3,7 @@ $imageHeight: 125px;
 .main {
   --minmaxheight: 40em;
   background-color: $primaryColor100;
-  height: 85vh;
+  // height: 85vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 13em 1fr;
@@ -21,7 +21,7 @@ $imageHeight: 125px;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
 
     h2 {
       position: absolute;
@@ -190,9 +190,11 @@ $imageHeight: 125px;
     bottom: -10%;
     left: 50%;
     opacity: 0.2;
+    transition: all 300ms ease;
     z-index: 20;
 
-    &:hover {
+    &:hover,
+    &:active {
       opacity: 0.7;
     }
   }
@@ -247,16 +249,23 @@ $imageHeight: 125px;
 
 @media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
   .main {
+    --minmaxheight: 36em;
     font-size: 24px;
     grid-template-rows: 15em 1fr;
     grid-template-columns: 1fr;
 
+    &__years {
+      h2 {
+        font-size: 5em;
+      }
+    }
     &__right {
       grid-template-rows: 18em 1fr;
     }
 
     &__container {
       font-size: clamp(14px, 3vw, 18px);
+      height: 28rem;
 
       .heading {
         font-size: clamp(18px, 3vw, 26px);

@@ -2,13 +2,15 @@ const tracker = document.querySelector(".slider__tracker");
 const slides = Array.from(tracker.children);
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
-const slideWidth = slides[1].getBoundingClientRect().width;
 const dotTracker = document.querySelector(".slider__dots");
 const dots = Array.from(dotTracker.children);
 const stopBtn = document.querySelector(".slider__stop");
 
+let slideWidth;
+
 // Set the Slides in their position
 const setSliderPosition = (slide, index) => {
+  slideWidth = slides[1].getBoundingClientRect().width;
   slide.style.left = `${(slideWidth * index) / 0.6}px`;
 };
 slides.forEach(setSliderPosition);
@@ -40,7 +42,6 @@ const nextEvent = (e) => {
 
   moveSlide(tracker, currentSlide, nextSlide);
   moveDot(currentDot, nextDot);
-  // waitSlide(e ? e : null);
 };
 nextBtn.addEventListener("click", nextEvent);
 
@@ -93,61 +94,7 @@ const restartSlides = () => {
     nextEvent();
   }
 };
-// Time 4.5s for restarting Slides
-// setInterval(restartSlides, 4500);
 
-const waitSlide = (e) => {
-  let rtimeTarget,
-    timeoutTarget = false,
-    deltaTarget = 5000,
-    restartTime = 3000;
-  // if (e === null) {
-  //   return;
-  // }
-
-  // interval = setInterval(restartSlides, restartTime);
-
-  // console.log(interval);
-  // const isClicked = nextBtn.contains(e.target);
-  // if (isClicked) {
-  //   console.log("LIS");
-  //   console.log(clearInterval(interval));
-  //   clearTimeInterval();
-  //   console.log(clearTimeInterval());
-  // }
-
-  const resizeend = () => {
-    if (new Date() - rtimeTarget < deltaTarget) {
-      // Wait for the resize to end
-      setTimeout(resizeend, deltaTarget);
-    } else {
-      console.log("Waiting");
-      timeoutTarget = false;
-      restartTime = 3000;
-      setInterval(restartSlides, restartTime);
-    }
-  };
-
-  // if (isClicked) {
-  //   console.log(isClicked, "CLICK");
-  //   clearInterval(interval);
-  rtimeTarget = new Date();
-  // Set the resize to end
-  if (timeoutTarget === false) {
-    timeoutTarget = true;
-    setTimeout(resizeend, deltaTarget);
-  }
-  // }
-
-  // if (!isClicked) {
-  //   console.log(!isClicked, "Not CLICK");
-  //   restartTime = 3000;
-  //   console.log(restartTime, "Gee");
-  //   // console.log(interval());
-  //   return;
-  // }
-};
-// waitSlide(nextBtn);
 let restartTime = 3000;
 let interval;
 
@@ -181,19 +128,19 @@ let delta = 200;
 
 window.addEventListener("resize", () => {
   const firstSlide = tracker.firstElementChild;
-  const currentSlide = tracker.querySelector(".current-slide");
   const firstDot = dotTracker.firstElementChild;
+  const currentSlide = tracker.querySelector(".current-slide");
   const currentDot = dotTracker.querySelector(".current-dot");
 
   // Set its slides on the first slide
-  if (!firstSlide.classList.contains("current-slide")) {
-    currentSlide.classList.remove("current-slide");
-    firstSlide.classList.add("current-slide");
-    tracker.style.transform = `translateX(${0}px)`;
-    currentDot.classList.remove("current-dot");
-    firstDot.classList.add("current-dot");
-    return;
-  }
+  // if (!firstSlide.classList.contains("current-slide")) {
+  //   currentSlide.classList.remove("current-slide");
+  //   firstSlide.classList.add("current-slide");
+  //   tracker.style.transform = `translateX(${0}px)`;
+  //   currentDot.classList.remove("current-dot");
+  //   firstDot.classList.add("current-dot");
+  //   return;
+  // }
 
   const resizeend = () => {
     if (new Date() - rtime < delta) {
@@ -203,16 +150,14 @@ window.addEventListener("resize", () => {
       timeout = false;
       // console.log("Done Resizing Slider");
 
-      const slides = Array.from(tracker.children);
-      const slideWidth = slides[1].getBoundingClientRect().width;
-      const m = matchMedia("(min-width: 0em) and (max-width: 90em)");
       // Set the slides to the start to be able to adjust
-      if (m.matches) {
-        const setSliderPosition = (slide, index) => {
-          slide.style.left = `${(slideWidth * index) / 0.6}px`;
-        };
-        slides.forEach(setSliderPosition);
-      }
+
+      slides.forEach(
+        (slide, index) =>
+          (slide.style.left = `${(getSlideWidth() * index) / 0.6}px`)
+      );
+
+      console.log(getSlideWidth());
     }
   };
 
@@ -223,3 +168,9 @@ window.addEventListener("resize", () => {
     setTimeout(resizeend, delta);
   }
 });
+
+function getSlideWidth() {
+  return (slideWidth = slides[1].getBoundingClientRect().width);
+}
+
+console.log(getSlideWidth());
