@@ -333,11 +333,13 @@ function touchStart(index) {
     currentIndex = index;
     startPos = getPositionX(e);
     animationID = requestAnimationFrame(animation);
+
+    e.target.closest(".marian__card").classList.add("grab");
   };
 }
 
 // If touch or mouse ends, move in their current position
-function touchEnd() {
+function touchEnd(e) {
   isDragging = false;
   cancelAnimationFrame(animationID);
 
@@ -347,6 +349,8 @@ function touchEnd() {
   if (movedBy > 80 && currentIndex > 0) currentIndex -= 1;
 
   setPosByIndex();
+
+  e.target.closest(".marian__card").classList.remove("grab");
 }
 
 // Moving the Card
@@ -395,9 +399,32 @@ function getCardMargin() {
   return (marginSize = (getScreenWidth() - getCardWidth()) / 2);
 }
 
-// E-News Card Event
-
 //////////////////// End of Card Event ////////////////////
+
+//////////////////// Start of FAQ Event ////////////////////
+
+const faqBtn = Array.from(document.querySelectorAll(".faq__btn"));
+
+faqBtn.forEach((faqBtn) => {
+  faqBtn.addEventListener("click", openFaq);
+});
+
+function openFaq(e) {
+  let container = e.target.nextElementSibling;
+  let arrow = e.target.firstElementChild;
+  console.log(e.target);
+
+  if (container.style.maxHeight) {
+    container.style.maxHeight = null;
+  } else {
+    container.style.maxHeight = `${container.scrollHeight + 50}px`;
+  }
+
+  container.classList.toggle("active");
+  arrow.classList.toggle("rotate");
+}
+
+//////////////////// End of FAQ Event ////////////////////
 
 //////////////////// Start of Resize Event ////////////////////
 
