@@ -1,5 +1,6 @@
 .events {
   // outline: 1px solid black;
+  position: relative;
   &__col-1 {
     --transX: -7.5em;
     --iconsize: 1.5em;
@@ -7,20 +8,21 @@
     // --socialheight: 2.5em;
     --fontweight-icon: 200;
     --fontfamily-icon: "Poppins", sans-serif;
-    position: sticky;
+    position: absolute;
+    top: 5%;
     left: 0;
-    top: 70%;
-    // width: 25em;
+
     width: 100%;
-    height: 2.25em;
+    height: 90%;
+
     pointer-events: none;
   }
   &__col-2 {
     // height: 800px;
     width: 100%;
-    margin: 0 0 12.25em 0;
+    // margin: 0 0 12.25em 0;
     display: grid;
-    grid-template-rows: 20em 15em 1fr;
+    grid-template-rows: 20em 15em 1fr 2.5em;
     grid-template-columns: 100%;
   }
 }
@@ -28,6 +30,9 @@
 .calendar {
   // padding: 1.5em 1.25em;
   height: auto;
+  position: sticky;
+  top: 50%;
+  left: 0;
   // pointer-events: none;
   &__heading {
     // background-color: lightgreen;
@@ -188,14 +193,16 @@
 .bro {
   @include flexCentered();
   flex-direction: column;
+  // padding: 2em 0;
+  justify-content: space-evenly;
 
   h4 {
-    font-size: 1.25em;
+    font-size: 1.45em;
   }
 
   video {
     width: 80%;
-    height: 15em;
+    height: auto;
   }
 }
 
@@ -235,7 +242,7 @@
     // @include flexCentered();
     // flex-direction: column;
     width: 100%;
-    outline: 1px solid black;
+    border: 1px solid black;
     border-radius: 5px;
   }
 
@@ -290,20 +297,20 @@
     }
 
     &__col-2 {
-      grid-template-rows: 28em 15em 1fr;
+      grid-template-rows: 32em 15em 1fr 2.5em;
     }
   }
 
   .bro {
-    font-size: 1.75em;
+    font-size: 1.5em;
   }
 
   .daily-verse {
-    font-size: 1.25em;
+    font-size: 1.15em;
   }
 
   .faq {
-    font-size: 1.5em;
+    font-size: 1.35em;
     width: 21em;
   }
 }
@@ -320,10 +327,12 @@
       grid-column: 1 / 2;
       position: relative;
       top: 0;
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+      // left: 0;
+      box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.3);
 
       width: 100%;
       height: auto;
+      // background-color: lightblue;
 
       --iconsize: 1.5em;
     }
@@ -335,12 +344,18 @@
       grid-template-rows: 32em 15em 1fr;
     }
   }
+  // .sticky {
+  //   background-color: tomato;
+  //   height: 10px;
+  // }
+
   .calendar {
     padding: 1.5em 1.25em;
     pointer-events: all;
 
     position: sticky;
-    top: 0;
+    top: 10px;
+
     left: 0;
 
     &__heading {
@@ -376,9 +391,10 @@
     }
   }
   .socialmedia {
-    position: sticky;
-    top: 75%;
-    left: 0;
+    // position: relative;
+    // bottom: 0%;
+    // left: 0;
+    margin-top: 20px;
 
     flex-direction: row;
     pointer-events: all;
@@ -398,6 +414,9 @@
 
   .bro {
     font-size: 1.5em;
+    height: 100%;
+    // background-color: green;
+    justify-content: space-evenly;
   }
 
   .daily-verse {

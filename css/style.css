@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&family=Source+Serif+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -67,6 +68,25 @@ ul {
           transform: translateY(0px);
   opacity: 1;
   pointer-events: all;
+}
+
+.test {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: lightgray;
+  height: 1000px;
 }
 
 .hero {
@@ -971,9 +991,8 @@ ul {
       grid-template-columns: 100%;
   -ms-grid-rows: 10em 16em 6em;
       grid-template-rows: 10em 16em 6em;
-  border-radius: 30px;
-  -webkit-box-shadow: 0 0 5px rgba(94, 94, 94, 0.7);
-          box-shadow: 0 0 5px rgba(94, 94, 94, 0.7);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
@@ -1283,34 +1302,40 @@ ul {
           transform: scale(0.98);
 }
 
+.events {
+  position: relative;
+}
+
 .events__col-1 {
   --transX: -7.5em;
   --iconsize: 1.5em;
   --iconheight: 2.5em;
   --fontweight-icon: 200;
   --fontfamily-icon: "Poppins", sans-serif;
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
+  top: 5%;
   left: 0;
-  top: 70%;
   width: 100%;
-  height: 2.25em;
+  height: 90%;
   pointer-events: none;
 }
 
 .events__col-2 {
   width: 100%;
-  margin: 0 0 12.25em 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20em 15em 1fr;
-      grid-template-rows: 20em 15em 1fr;
+  -ms-grid-rows: 20em 15em 1fr 2.5em;
+      grid-template-rows: 20em 15em 1fr 2.5em;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
 }
 
 .calendar {
   height: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  left: 0;
 }
 
 .calendar__heading h4 {
@@ -1546,15 +1571,18 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .bro h4 {
-  font-size: 1.25em;
+  font-size: 1.45em;
 }
 
 .bro video {
   width: 80%;
-  height: 15em;
+  height: auto;
 }
 
 .daily-verse {
@@ -1624,7 +1652,7 @@ ul {
 
 .faq__inquiry {
   width: 100%;
-  outline: 1px solid black;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -1693,17 +1721,17 @@ ul {
     --iconheight: 3em;
   }
   .events__col-2 {
-    -ms-grid-rows: 28em 15em 1fr;
-        grid-template-rows: 28em 15em 1fr;
+    -ms-grid-rows: 32em 15em 1fr 2.5em;
+        grid-template-rows: 32em 15em 1fr 2.5em;
   }
   .bro {
-    font-size: 1.75em;
+    font-size: 1.5em;
   }
   .daily-verse {
-    font-size: 1.25em;
+    font-size: 1.15em;
   }
   .faq {
-    font-size: 1.5em;
+    font-size: 1.35em;
     width: 21em;
   }
 }
@@ -1723,8 +1751,8 @@ ul {
     grid-column: 1 / 2;
     position: relative;
     top: 0;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     --iconsize: 1.5em;
@@ -1742,7 +1770,7 @@ ul {
     pointer-events: all;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 10px;
     left: 0;
   }
   .calendar__heading {
@@ -1785,10 +1813,7 @@ ul {
     display: block;
   }
   .socialmedia {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 75%;
-    left: 0;
+    margin-top: 20px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1820,6 +1845,10 @@ ul {
   }
   .bro {
     font-size: 1.5em;
+    height: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .daily-verse {
     font-size: 0.9em;
@@ -1827,6 +1856,216 @@ ul {
   .faq {
     font-size: 1em;
     width: 28em;
+  }
+}
+
+.smcm {
+  background-color: #040837;
+  height: 30em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.smcm__word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 20em;
+}
+
+.smcm__logo {
+  --whsize: 10em;
+  width: var(--whsize);
+  height: var(--whsize);
+}
+
+.smcm__signature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 6em;
+}
+
+.smcm__signature h1 {
+  color: white;
+  letter-spacing: 3px;
+  font-size: 1.75em;
+  font-weight: 200;
+  font-family: "Source Serif Pro";
+}
+
+.smcm__signature p {
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Source Serif Pro";
+  font-weight: 200;
+  font-size: 1.25em;
+}
+
+.smcm__tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.smcm__tag p {
+  color: white;
+  width: 24ch;
+  font-size: 1.25em;
+  font-family: "Satisfy", sans-serif;
+  text-align: center;
+}
+
+.smcm__links {
+  display: none;
+}
+
+footer {
+  background-color: #020525;
+  padding: 0.5em 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.6em;
+}
+
+@media (min-width: 57.75em) {
+  .smcm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 25em;
+  }
+  .smcm__word {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 45em;
+  }
+  .smcm__links {
+    width: 35em;
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .smcm__smcmlinks h4 {
+    color: white;
+    font-size: 1.15em;
+    padding: 0.5em 0.3em;
+  }
+  .smcm__smcmlinks ul {
+    color: white;
+  }
+  .smcm__smcmlinks ul li {
+    padding: 0.5em 0.3em;
+  }
+  .smcm__smcmlinks ul li a {
+    color: white;
+    font-size: 0.8em;
+  }
+  .smcm__smcmsocials h4 {
+    color: white;
+    font-size: 1.15em;
+    padding: 0.5em 0.3em;
+  }
+  .smcm__smcmsocial {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .smcm__smcmsocial a {
+    font-size: 0.8em;
+  }
+  .smcm__smcmsocial a span {
+    color: white;
+    width: 7em;
+    padding: 0.5em 0.3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .smcm__smcmsocial a span i {
+    font-size: 1.5em;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&family=Source+Serif+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
 // Variables Fonts
 $RobotoSlab: "Roboto Slab";
 $SourceSerifPro: "Source Serif Pro";
@@ -50,20 +52,6 @@ a {
   cursor: pointer;
 }
 
-// a {
-//   background-color: $secondaryColor;
-//   color: $primaryColor100;
-//   padding: 0.75em 1.5em;
-//   border-radius: 3px;
-
-//   transition: transform 350ms ease-in-out;
-
-//   &:hover {
-//     background-color: #151c85;
-//     transform: scale(0.95);
-//   }
-// }
-
 ul {
   list-style-type: none;
 }
@@ -104,7 +92,18 @@ ul {
   justify-content: center;
 }
 
+.test {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: lightgray;
+  height: 1000px;
+}
+
 @import "./_header.scss";
 @import "./_main.scss";
 @import "./_news.scss";
 @import "./_section.scss";
+@import "./_footer.scss";

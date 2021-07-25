@@ -1,0 +1,131 @@
+.smcm {
+  background-color: #040837;
+  height: 30em;
+  @include flexCentered();
+  &__word {
+    @include flexCentered();
+    flex-direction: column;
+    height: 20em;
+    // padding: 10em 0 0 0;
+  }
+  &__logo {
+    --whsize: 10em;
+    width: var(--whsize);
+    height: var(--whsize);
+  }
+
+  &__signature {
+    @include flexCentered();
+    flex-direction: column;
+    height: 6em;
+    h1 {
+      color: white;
+      letter-spacing: 3px;
+      font-size: 1.75em;
+      font-weight: 200;
+      font-family: $SourceSerifPro;
+    }
+    p {
+      color: white;
+      letter-spacing: 2px;
+      font-family: $SourceSerifPro;
+      font-weight: 200;
+      font-size: 1.25em;
+    }
+  }
+  &__tag {
+    @include flexCentered();
+    flex-direction: column;
+    p {
+      color: white;
+      width: 24ch;
+      font-size: 1.25em;
+      font-family: "Satisfy", sans-serif;
+      text-align: center;
+    }
+  }
+
+  &__links {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #020525;
+  padding: 0.5em 0.5em;
+  @include flexCentered();
+  p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: $minWidthDesktop) {
+  .smcm {
+    display: flex;
+    // height: 30em;
+    justify-content: space-around;
+    align-items: center;
+    height: 25em;
+    &__word {
+      // background-color: tomato;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 45em;
+    }
+
+    &__links {
+      // background-color: lightblue;
+      // background-  color: tomato;
+      width: 35em;
+      display: block;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__smcmlinks {
+      h4 {
+        color: rgb(255, 255, 255);
+        font-size: 1.15em;
+        padding: 0.5em 0.3em;
+      }
+      ul {
+        color: white;
+        li {
+          padding: 0.5em 0.3em;
+          a {
+            color: white;
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+
+    &__smcmsocials {
+      h4 {
+        color: rgb(255, 255, 255);
+        font-size: 1.15em;
+        padding: 0.5em 0.3em;
+      }
+    }
+
+    &__smcmsocial {
+      @include flexCentered();
+      flex-direction: column;
+      a {
+        font-size: 0.8em;
+        span {
+          color: white;
+          width: 7em;
+          padding: 0.5em 0.3em;
+          @include flexCentered();
+          justify-content: space-between;
+          i {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
