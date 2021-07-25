@@ -75,9 +75,17 @@ ul {
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #logo {
@@ -1164,6 +1172,7 @@ ul {
   width: 100%;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  position: relative;
 }
 
 .marian__card {
@@ -1190,6 +1199,7 @@ ul {
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .marian__img {
@@ -1206,6 +1216,7 @@ ul {
   --transformY: -3.75em;
   -webkit-transform: translateY(var(--transformY));
           transform: translateY(var(--transformY));
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
