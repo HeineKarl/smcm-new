@@ -4,9 +4,9 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 10em 16em 6em;
-  border-radius: 30px;
+  // border-radius: 100px;
 
-  box-shadow: 0 0 5px rgba(94, 94, 94, 0.7);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 
   &__heading {

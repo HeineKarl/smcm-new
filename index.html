@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SMCM Homepage</title>
+    <title>Smcm Homepage</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+
     <script
       src="https://kit.fontawesome.com/45a6663b88.js"
       crossorigin="anonymous"
@@ -28,8 +30,6 @@
         </div>
         <nav class="navigation">
           <div class="navigation__inner">
-            <!-- header -->
-
             <div class="navigation__header">
               <span class="fas fa-times close-btn"></span>
               <div class="navigation__logo">
@@ -41,9 +41,7 @@
               </div>
             </div>
 
-            <!-- body -->
             <div class="navigation__body">
-              <!-- About SMCM -->
               <section class="menu">
                 <button class="menu__btn">
                   About SMCM <span class="fas fa-angle-down"></span>
@@ -65,7 +63,6 @@
                 </div>
               </section>
 
-              <!-- School Management -->
               <section class="menu">
                 <button class="menu__btn">
                   School Management <span class="fas fa-angle-down"></span>
@@ -76,7 +73,6 @@
                       <h3>School Management</h3>
                     </div>
 
-                    <!-- Academics under school management -->
                     <div class="menu__section">
                       <h3>Academics</h3>
                       <ul class="menu__box">
@@ -98,7 +94,6 @@
                       </ul>
                     </div>
 
-                    <!-- Admission under school management -->
                     <div class="menu__section">
                       <h3>Admission</h3>
                       <ul class="menu__box">
@@ -116,7 +111,6 @@
                       </ul>
                     </div>
 
-                    <!-- Facilities under school management -->
                     <div class="menu__section">
                       <h3>Facilities</h3>
                       <ul class="menu__box">
@@ -141,7 +135,6 @@
                       </ul>
                     </div>
 
-                    <!-- Clubs and Organization under school management -->
                     <div class="menu__section">
                       <h3>Clubs & Organization</h3>
                       <ul class="menu__box">
@@ -160,7 +153,6 @@
                 </div>
               </section>
 
-              <!-- Service Units -->
               <section class="menu">
                 <button class="menu__btn">
                   Service Units <span class="fas fa-angle-down"></span>
@@ -181,7 +173,7 @@
                 </div>
               </section>
             </div>
-            <!-- footer -->
+
             <div class="navigation__footer">
               <h6>Copyright © 2021 | All Rights Reserved</h6>
               <p>Mr. Karl Vincent Del Rosario | Ms. Nicole Jane Morenos</p>
@@ -191,7 +183,6 @@
       </div>
     </header>
     <main class="main">
-      <!-- left section -->
       <section class="main__left">
         <div class="main__years">
           <h2>1916</h2>
@@ -210,14 +201,13 @@
           <a href="#LearnMore">Learn more</a>
         </div>
       </section>
-      <!-- right section -->
       <section class="main__right">
         <div class="prev-btn">
           <i class="fas fa-chevron-left"></i>
         </div>
         <div class="slider__container">
           <div class="slider">
-            <ul class="slider__tracker">
+            <div class="slider__tracker">
               <div class="slider__img current-slide">
                 <img src="./img/picture1.jpg" alt="carousel picture" />
               </div>
@@ -239,12 +229,12 @@
               <div class="slider__img">
                 <img src="./img/picture7.jpg" alt="carousel picture" />
               </div>
-            </ul>
+            </div>
             <div class="c">
               <button class="slider__stop"><i class="fas fa-pause"></i></button>
             </div>
           </div>
-          <ul class="slider__dots">
+          <div class="slider__dots">
             <span class="slider__dot current-dot"></span>
             <span class="slider__dot"></span>
             <span class="slider__dot"></span>
@@ -252,7 +242,7 @@
             <span class="slider__dot"></span>
             <span class="slider__dot"></span>
             <span class="slider__dot"></span>
-          </ul>
+          </div>
         </div>
         <div class="next-btn">
           <i class="fas fa-chevron-right"></i>
@@ -274,12 +264,11 @@
           <div class="marian__journal">
             <div class="journal">
               <div class="journal__heading">
-                <!-- Title -->
                 <div>
                   <h3>Healthy Foods</h3>
                   <p>July 03, 2021</p>
                 </div>
-                <!-- Author's Image -->
+
                 <div>
                   <img
                     src="./img/journalist-id1.jpg"
@@ -288,34 +277,23 @@
                 </div>
               </div>
               <div class="journal__tags">
-                <!-- Create an actual UI in JS -->
                 <div class="journal-tag"><span>Health</span></div>
                 <div class="journal-tag"><span>Food</span></div>
                 <div class="journal-tag"><span>Passion</span></div>
               </div>
               <div class="journal__reaction">
                 <div class="journal-emojis">
-                  <!---- Emoji Like -->
                   <div class="emoji-like">
                     <i class="fas fa-thumbs-up"></i>
                   </div>
-                  <!---- Emoji Heart -->
+
                   <div class="emoji-heart">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <!---- Emoji Insightful -->
+
                   <div class="emoji-insightful">
                     <i class="fas fa-lightbulb"></i>
                   </div>
-                  <!-- </div>
-                  -- Emoji Sad
-                  <div class="emoji-sad">
-                    <i class="fas fa-sad-tear"></i>
-                  </div>
-                  -- Emoji Angry
-                  <div class="emoji-insightful">
-                    <i class="fas fa-angry"></i>
-                  </div> -->
                 </div>
                 <div class="journal-author">
                   <span>By Anonymous</span>
@@ -331,12 +309,11 @@
           <div class="marian__journal">
             <div class="journal">
               <div class="journal__heading">
-                <!-- Title -->
                 <div>
                   <h3>Online class upcoming</h3>
                   <p>July 17, 2021</p>
                 </div>
-                <!-- Author's Image -->
+
                 <div>
                   <img
                     src="./img/journalist-id1.jpg"
@@ -345,34 +322,23 @@
                 </div>
               </div>
               <div class="journal__tags">
-                <!-- Create an actual UI in JS -->
                 <div class="journal-tag"><span>Historic</span></div>
                 <div class="journal-tag"><span>School</span></div>
                 <div class="journal-tag"><span>Society</span></div>
               </div>
               <div class="journal__reaction">
                 <div class="journal-emojis">
-                  <!---- Emoji Like -->
                   <div class="emoji-like">
                     <i class="fas fa-thumbs-up"></i>
                   </div>
-                  <!---- Emoji Heart -->
+
                   <div class="emoji-heart">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <!---- Emoji Insightful -->
+
                   <div class="emoji-insightful">
                     <i class="fas fa-lightbulb"></i>
                   </div>
-                  <!-- </div>
-                  -- Emoji Sad
-                  <div class="emoji-sad">
-                    <i class="fas fa-sad-tear"></i>
-                  </div>
-                  -- Emoji Angry
-                  <div class="emoji-insightful">
-                    <i class="fas fa-angry"></i>
-                  </div> -->
                 </div>
                 <div class="journal-author">
                   <span>By Anonymous</span>
@@ -388,12 +354,11 @@
           <div class="marian__journal">
             <div class="journal">
               <div class="journal__heading">
-                <!-- Title -->
                 <div>
                   <h3>Evergreen</h3>
                   <p>August 11, 2021</p>
                 </div>
-                <!-- Author's Image -->
+
                 <div>
                   <img
                     src="./img/journalist-id1.jpg"
@@ -402,34 +367,23 @@
                 </div>
               </div>
               <div class="journal__tags">
-                <!-- Create an actual UI in JS -->
                 <div class="journal-tag"><span>Historic</span></div>
                 <div class="journal-tag"><span>Pro-Filipino</span></div>
                 <div class="journal-tag"><span>Society</span></div>
               </div>
               <div class="journal__reaction">
                 <div class="journal-emojis">
-                  <!---- Emoji Like -->
                   <div class="emoji-like">
                     <i class="fas fa-thumbs-up"></i>
                   </div>
-                  <!---- Emoji Heart -->
+
                   <div class="emoji-heart">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <!---- Emoji Insightful -->
+
                   <div class="emoji-insightful">
                     <i class="fas fa-lightbulb"></i>
                   </div>
-                  <!-- </div>
-                  -- Emoji Sad
-                  <div class="emoji-sad">
-                    <i class="fas fa-sad-tear"></i>
-                  </div>
-                  -- Emoji Angry
-                  <div class="emoji-insightful">
-                    <i class="fas fa-angry"></i>
-                  </div> -->
                 </div>
                 <div class="journal-author">
                   <span>By Anonymous</span>
@@ -445,12 +399,11 @@
           <div class="marian__journal">
             <div class="journal">
               <div class="journal__heading">
-                <!-- Title -->
                 <div>
                   <h3>Plantita still ongoing</h3>
                   <p>August 23, 2021</p>
                 </div>
-                <!-- Author's Image -->
+
                 <div>
                   <img
                     src="./img/journalist-id1.jpg"
@@ -459,34 +412,23 @@
                 </div>
               </div>
               <div class="journal__tags">
-                <!-- Create an actual UI in JS -->
                 <div class="journal-tag"><span>Historic</span></div>
                 <div class="journal-tag"><span>Pro-Filipino</span></div>
                 <div class="journal-tag"><span>Society</span></div>
               </div>
               <div class="journal__reaction">
                 <div class="journal-emojis">
-                  <!---- Emoji Like -->
                   <div class="emoji-like">
                     <i class="fas fa-thumbs-up"></i>
                   </div>
-                  <!---- Emoji Heart -->
+
                   <div class="emoji-heart">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <!---- Emoji Insightful -->
+
                   <div class="emoji-insightful">
                     <i class="fas fa-lightbulb"></i>
                   </div>
-                  <!-- </div>
-                  -- Emoji Sad
-                  <div class="emoji-sad">
-                    <i class="fas fa-sad-tear"></i>
-                  </div>
-                  -- Emoji Angry
-                  <div class="emoji-insightful">
-                    <i class="fas fa-angry"></i>
-                  </div> -->
                 </div>
                 <div class="journal-author">
                   <span>By Anonymous</span>
@@ -502,12 +444,10 @@
           <div class="marian__journal">
             <div class="journal">
               <div class="journal__heading">
-                <!-- Title -->
                 <div>
                   <h3>Election 2022</h3>
                   <p>September 27, 2021</p>
                 </div>
-                <!-- Author's Image -->
                 <div>
                   <img
                     src="./img/journalist-id1.jpg"
@@ -516,34 +456,23 @@
                 </div>
               </div>
               <div class="journal__tags">
-                <!-- Create an actual UI in JS -->
                 <div class="journal-tag"><span>Historic</span></div>
                 <div class="journal-tag"><span>Pro-Filipino</span></div>
                 <div class="journal-tag"><span>Society</span></div>
               </div>
               <div class="journal__reaction">
                 <div class="journal-emojis">
-                  <!---- Emoji Like -->
                   <div class="emoji-like">
                     <i class="fas fa-thumbs-up"></i>
                   </div>
-                  <!---- Emoji Heart -->
+
                   <div class="emoji-heart">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <!---- Emoji Insightful -->
+
                   <div class="emoji-insightful">
                     <i class="fas fa-lightbulb"></i>
                   </div>
-                  <!-- </div>
-                  -- Emoji Sad
-                  <div class="emoji-sad">
-                    <i class="fas fa-sad-tear"></i>
-                  </div>
-                  -- Emoji Angry
-                  <div class="emoji-insightful">
-                    <i class="fas fa-angry"></i>
-                  </div> -->
                 </div>
                 <div class="journal-author">
                   <span>By Anonymous</span>
@@ -560,6 +489,7 @@
     </section>
     <section class="events">
       <div class="events__col-1">
+        <!-- <div class="sticky"> -->
         <section class="calendar">
           <div class="calendar__heading">
             <h4>Calendar <span class="fas fa-calendar-alt"></span></h4>
@@ -595,32 +525,37 @@
               </div>
             </div>
           </div>
+          <section class="socialmedia">
+            <div class="socialmedia__icon">
+              <span class="socialmedia__name">Facebook</span
+              ><i class="fab fa-facebook-square"></i>
+            </div>
+            <div class="socialmedia__icon">
+              <span class="socialmedia__name">YouTube</span
+              ><i class="fab fa-youtube-square"></i>
+            </div>
+            <div class="socialmedia__icon">
+              <span class="socialmedia__name">LinkedIn</span
+              ><i class="fab fa-linkedin"></i>
+            </div>
+          </section>
         </section>
-        <section class="socialmedia">
-          <div class="socialmedia__icon">
-            <span class="socialmedia__name">Facebook</span
-            ><i class="fab fa-facebook-square"></i>
-          </div>
-          <div class="socialmedia__icon">
-            <span class="socialmedia__name">YouTube</span
-            ><i class="fab fa-youtube-square"></i>
-          </div>
-          <div class="socialmedia__icon">
-            <span class="socialmedia__name">LinkedIn</span
-            ><i class="fab fa-linkedin"></i>
-          </div>
-        </section>
+        <!-- </div>s -->
       </div>
       <div class="events__col-2">
         <section class="bro">
           <h4>Believe, Realize and Offer</h4>
-          <video
+          <!-- <video
             src="./video/video.mp4"
             type="video/mp4"
             controls
             autoplay
             muted
-          ></video>
+          ></video> -->
+
+          <video id="player" playsinline controls>
+            <source src="./video/video.mp4" type="video/mp4" />
+          </video>
         </section>
         <section class="daily-verse">
           <h4>Daily Verse</h4>
@@ -681,25 +616,54 @@
         </section>
       </div>
     </section>
-    <div
-      style="
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: lightgray;
-        height: 1000px;
-      "
-      class="test"
-    >
+    <section class="smcm">
+      <section class="smcm__word">
+        <div class="smcm__logo">
+          <img src="./img/logo.png" alt="Logo" />
+        </div>
+        <div class="smcm__content">
+          <div class="smcm__signature">
+            <h1>St. Mary's</h1>
+            <p>College of Meycauayan</p>
+          </div>
+          <div class="smcm__tag">
+            <p>Living the Legacy of Faith, Service and Excellences</p>
+          </div>
+        </div>
+      </section>
+      <section class="smcm__links">
+        <div class="smcm__smcmlinks">
+          <h4>SMCM Links</h4>
+          <ul>
+            <li><a href="#About-School">About School</a></li>
+            <li><a href="#Academics">Academics</a></li>
+            <li><a href="#Admission">Admissionl</a></li>
+            <li><a href="#Facilities">Facilities</a></li>
+            <li><a href="#ServicesUnits">Services Units</a></li>
+            <li><a href="#ClubsAndOrganization">Clubs & Organization</a></li>
+          </ul>
+        </div>
+        <div class="smcm__smcmsocials">
+          <h4>Social Links</h4>
+          <div class="smcm__smcmsocial">
+            <a href="#Facebook"><span><i class="fab fa-facebook-square"></i>Facebook</span><a/>
+            <a href="#LinkedIn"><span><i class="fab fa-linkedin"></i>LinkedIn</span></a>
+            <a href="#YouTube"><span><i class="fab fa-youtube-square"></i>YouTube</span></a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <p>Copyright 2021. St. Mary’s College of Meycauayan</p>
+    </footer>
+    <!-- <div class="test">
       <h3 style="font-weight: 900; font-size: 3em; text-align: center">
         Under Construction
       </h3>
       <img style="width: 200px; height: 200px" src="./img/logo.png" alt="" />
-    </div>
+    </div> -->
     <button class="bring-top"><i class="fas fa-chevron-up"></i></button>
     <script src="./app.js"></script>
-    <!-- <script src="./test.js"></script> -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
   </body>
 </html>
