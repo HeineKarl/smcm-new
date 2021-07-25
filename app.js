@@ -1,3 +1,14 @@
+//////////////////// Start of Load Event ////////////////////
+
+const loader = document.querySelector(".loader-container");
+
+window.addEventListener("load", loaderEvent);
+
+function loaderEvent() {
+  setTimeout(() => loader.parentElement.removeChild(loader), 5000);
+}
+//////////////////// End of Load Event ////////////////////
+
 //////////////////// Start of Top Scroll Event ////////////////////
 
 // Variables for the Button
