@@ -7,6 +7,7 @@ window.addEventListener("load", loaderEvent);
 function loaderEvent() {
   setTimeout(() => loader.parentElement.removeChild(loader), 5000);
 }
+
 //////////////////// End of Load Event ////////////////////
 
 //////////////////// Start of Top Scroll Event ////////////////////
@@ -316,6 +317,7 @@ window.oncontextmenu = (e) => {
   return false;
 };
 
+console.log("loo");
 // Selecting each Cards
 newsCards.forEach((newsCard, index) => {
   // Positioning in the right place
